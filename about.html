@@ -1,12 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hi this is krishna..</h1>
-    <h1>new feature</h1>
-</body>
-</html>
+//Traversing insert node from the beggining and traversing the node
+#include<iostream>
+using namespace std;
+struct Node{
+   int data;
+   Node *link;
+};
+Node *head = NULL;
+void insert_beg(int x){
+    //create a new node
+  Node *ptr = new Node();
+  //assigning the value
+  ptr->data = x;
+  //assigning the address NULL
+  //ptr->link=NULL;
+  ptr->link=head;
+  head=ptr;
+  //cout<<"|"<<head->data<<"|";
+}
+void disp(){
+  Node *temp = new Node();
+  temp=head;
+  while(temp!=NULL){
+    cout<<temp->data<<"|"<<temp->link<<endl;
+    temp= temp->link;
+  }
+}
+int main(){
+   insert_beg(2);
+   insert_beg(3);
+   insert_beg(4);
+   insert_beg(5);
+   disp();
+   return 0;
+}
+
+
+
